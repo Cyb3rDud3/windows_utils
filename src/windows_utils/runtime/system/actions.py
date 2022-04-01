@@ -198,3 +198,7 @@ def enable_safemode():
 def disable_safemod():
     run_detached_process("bcdedit /deletevalue {default} safeboot")
     return
+
+
+def change_background(full_path_to_background):
+    windll.user32.SystemParametersInfoW(20, 0, full_path_to_background, 0)
